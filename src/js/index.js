@@ -37,27 +37,27 @@ if (gradesForm) {
     // Получаем новую оценку из поля ввода и преобразуем в число
     const newGrade = Number.parseInt(yourGrade.value, 10);
 // Валидация: проверяем, что оценка — число от 1 до 20
-    if (Number.isNaN(newGrade) || newGrade < 1 || newGrade > 20) {
-      new Notification({
-        variant: "error",
-        title: "Неверная оценка",
-        subtitle: "Оценка должна быть от 1 до 20",
-      });
-      return;
-    }
-    // Добавляем новую оценку в массив оценок
-    grades.push(newGrade);
+if (Number.isNaN(newGrade) || newGrade < 1 || newGrade > 20) {
+  new Notification({
+    variant: "error",
+    title: "Неверная оценка",
+    subtitle: "Оценка должна быть от 1 до 20",
+  });
+  return;
+}
 
-    // Очищаем поле ввода после добавления оценки
-    yourGrade.value = "";
+// Сообщаем об успехе
+new Notification({
+  variant: "success",
+  title: "Оценка добавлена",
+  subtitle: `Вы добавили оценку: ${newGrade}`,
+});
 
-    // Перерисовываем таблицу, чтобы отобразить обновленные данные
-    render(grades);
-    new Notification({
-      variant: "success",
-      title: "Оценка добавлена",
-      subtitle: `Вы добавили оценку: ${newGrade}`,
-    });
+// Выполняем действия
+grades.push(newGrade);
+yourGrade.value = "";
+render(grades);
+
   });
   
 }
