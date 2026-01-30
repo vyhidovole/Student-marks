@@ -1,4 +1,6 @@
-@import "./components/notification.css";
+/*style.css*/
+
+@import "../components/notification.css";
 
 :root {
   --white: #fff;

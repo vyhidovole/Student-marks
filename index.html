@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="src/css/notification.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <h1 class="nav-brand">Оценки студентов</h1>
-    </nav>
 
-    <main class="container">
-      <form id="grades-form">
-        <label class="label" for="component-name">Enter grade</label>
-        <input
-          autocomplete="off"
-          type="number"
-          min="0"
-          max="20"
-          class="input"
-          required
-          placeholder="Grade (0 and 20)"
-          id="your-grade"
-        />
-        <input type="submit" class="btn btn-accent" value="Add" />
-      </form>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <!-- <link rel="stylesheet" href="src/css/style.css" /> -->
+  <!-- <link rel="stylesheet" href="src/css/notification.css" /> -->
+</head>
 
-      <table border="1" id="stats-table" class="table table-center">
-        <thead>
-          <tr>
-            <th width="25%">Number of tests taken</th>
-            <th width="25%">First submitted grade</th>
-            <th width="25%">Last submitted grade</th>
-            <th width="25%">Average number grade</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </main>
-    <script type="module" src="src/js/index.js"></script>
-  </body>
+<body>
+  <nav class="navbar">
+    <h1 class="nav-brand">Оценки студентов</h1>
+  </nav>
+
+  <main class="container">
+    <form id="grades-form">
+      <label class="label" for="component-name">Enter grade</label>
+      <input autocomplete="off" type="number" min="0" max="20" class="input" required placeholder="Grade (0 and 20)"
+        id="your-grade" />
+      <input type="submit" class="btn btn-accent" value="Add" />
+      <label for="sort">Сортировать</label>
+      <select  id="sort" autocomplete="off">
+        <option value="asc">По убыванию</option>
+        <option value="desc">По возрастанию</option>
+      </select>
+
+    </form>
+
+    <table border="1" id="stats-table" class="table table-center">
+      <thead>
+        <tr>
+          <th width="25%">Number of tests taken</th>
+          <th width="25%">First submitted grade</th>
+          <th width="25%">Last submitted grade</th>
+          <th width="25%">Average number grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div id="grades-history">
+      <h2>История оценок</h2>
+      <ul id="grade-list"></ul>
+    </div>
+
+  </main>
+  <script type="module" src="src/js/index.js"></script>
+</body>
+
 </html>
