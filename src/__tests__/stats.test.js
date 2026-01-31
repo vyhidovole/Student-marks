@@ -1,4 +1,4 @@
-import { getNumberOfGrades, getFirstGrade, getLastGrade } from "../src/js/stats.js";
+import { getNumberOfGrades, getFirstGrade, getLastGrade } from "../js/stats.js";
 
 describe('getNumberOfGrades', () => {
 	it('should return the correct number of grades', () => {
